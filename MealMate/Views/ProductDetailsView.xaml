@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:helpers="clr-namespace:MealMate.Helpers"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="MealMate.Views.ProductDetailsView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="{Binding SelectedFoodItem.ImageUrl}" Aspect="AspectFill" VerticalOptions="Start" />
+            <Label Grid.Row="1" Text="{Binding SelectedFoodItem.Name}" TextColor="White" FontAttributes="Bold" FontSize="35"
+                   Margin="25,-85,0,0" />
+            <ImageButton Grid.Row="0" Grid.RowSpan="2" Source="{FontImage FontFamily=FontAwesome,
+                        Glyph={x:Static helpers:IconFont.ArrowLeft}, Size=30,Color=White}" BackgroundColor="Transparent"
+                        Margin="10,30" HorizontalOptions="Start" Clicked="ImageButton_Clicked" VerticalOptions="Start" Aspect="AspectFit"/>
+
+            <StackLayout Grid.Row="2" Spacing="10" Padding="10"
+                             VerticalOptions="Start">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Product ID: " FontSize="Subtitle" />
+                    <Label Text="{Binding SelectedFoodItem.ProductID}"
+                               FontSize="Subtitle" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Product Name: " FontSize="Subtitle" />
+                    <Label Text="{Binding SelectedFoodItem.Name}"
+                               FontSize="Subtitle"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Description: " FontSize="Subtitle" />
+                    <Label Text="{Binding SelectedFoodItem.Description}"
+                               FontSize="Subtitle" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Rating: " FontSize="Subtitle" />
+                    <Label Text="{Binding SelectedFoodItem.Rating}"
+                               FontSize="Subtitle" />
+                </StackLayout>
+            </StackLayout>
+
+            <Grid Grid.Row="3" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="-" FontSize="30" TextColor="White"
+                            Grid.Column="0" BackgroundColor="Purple"
+                            HorizontalOptions="End"
+                            Command="{Binding DecrementOrderCommand}" />
+
+                <Entry Text="{Binding TotalQuantity}" Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="Center" FontSize="30"/>
+
+                <pancake:PancakeView Grid.Column="1" CornerRadius="20,20,20,20" >
+                    <Entry Text="{Binding TotalQuantity}" Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="Center" FontSize="30"
+                           WidthRequest="40" 
+                           BackgroundColor="Transparent" />
+                </pancake:PancakeView>
+
+                <Button Text="+" FontSize="30" TextColor="White" Grid.Column="2"
+                        BackgroundColor="Purple" HorizontalOptions="Start"
+                        Command="{Binding IncrementOrderCommand}" />
+            </Grid>
+
+            <StackLayout Grid.Row="4" Margin="10,0">
+                <BoxView />
+                <StackLayout Orientation="Horizontal" >
+                    <pancake:PancakeView CornerRadius="20,20,20,20"
+                                         HorizontalOptions="Center">
+                        <Button Text="Add to Cart" BackgroundColor="LimeGreen"
+                                WidthRequest="200" HorizontalOptions="Center"
+                                Command="{Binding AddToCartCommand}"
+                                HeightRequest="50" />
+                    </pancake:PancakeView>
+
+                    <pancake:PancakeView CornerRadius="20,20,20,20"
+                                         HorizontalOptions="Center">
+                        <Button Text="View Cart" WidthRequest="200" HorizontalOptions="Center"
+                                Command="{Binding ViewCartCommand}"  BackgroundColor="Orange"
+                                HeightRequest="50" />
+                    </pancake:PancakeView>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Go To Home" HeightRequest="60" Grid.Row="6" Command="{Binding HomeCommand}" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
