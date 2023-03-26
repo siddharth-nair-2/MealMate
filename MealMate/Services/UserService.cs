@@ -1,5 +1,6 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
+using MealMate.Helpers;
 using MealMate.Model;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace MealMate.Services
 
         public UserService()
         {
-            client = new FirebaseClient("https://mealmate-61db7-default-rtdb.firebaseio.com/");
+            client = new FirebaseClient(Constants.URL);
         }
 
         public async Task<bool> DoesUserExist(string username)

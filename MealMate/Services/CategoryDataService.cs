@@ -1,4 +1,5 @@
 ﻿using Firebase.Database;
+using MealMate.Helpers;
 using MealMate.Model;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace MealMate.Services
         FirebaseClient client;
         public CategoryDataService()
         {
-            client = new FirebaseClient("https://mealmate-61db7-default-rtdb.firebaseio.com/");
+            client = new FirebaseClient(Constants.URL);
         }
 
         public async Task<List<Category>> GetCategoriesAsync()

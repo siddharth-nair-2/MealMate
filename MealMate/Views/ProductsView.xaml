@@ -65,8 +65,8 @@
                     </Label.FormattedText>
                 </Label>
                 <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{FontImage FontFamily=FontAwesome,
-                    Glyph={x:Static helpers:IconFont.Menu}, Size=40,Color=DarkRed}" BackgroundColor="Transparent"
-                             Margin="0,0,10,0" HorizontalOptions="Center"/>
+                    Glyph={x:Static helpers:IconFont.ViewList}, Size=40,Color=DarkRed}" BackgroundColor="Transparent"
+                             Margin="0,0,10,0" HorizontalOptions="Center" Command="{Binding OrdersHistoryCommand}"/>
 
                 <Label Text="{Binding UserCartItemsCount}" FontSize="Subtitle" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HorizontalTextAlignment="End"
                        VerticalTextAlignment="Start" />
@@ -83,10 +83,11 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <SearchBar Grid.Column="0" Placeholder="Search Food" BackgroundColor="Transparent" HorizontalOptions="Fill" />
+                <SearchBar Grid.Column="0" Placeholder="Search Food" BackgroundColor="Transparent" HorizontalOptions="Fill" 
+                           Text="{Binding SearchText}"/>
                 <ImageButton Grid.Column="1" Source="{FontImage FontFamily=FontAwesome,
                     Glyph={x:Static helpers:IconFont.SearchWeb}, Size=40,Color=Black}" BackgroundColor="Transparent"
-                    Margin="0,0,10,0" HorizontalOptions="End"/>
+                    Margin="0,0,10,0" HorizontalOptions="End"  Command="{Binding SearchViewCommand}"/>
             </Grid>
 
             <CollectionView ItemsSource="{Binding Categories}"
@@ -111,11 +112,12 @@
 
             <Label Grid.Row="3" Text="Latest Items" FontSize="25" FontAttributes="Bold" />
             <CollectionView ItemsSource="{Binding LatestItems}" Margin="0,20,10,0" VerticalOptions="Start"
+                            SelectionMode="Single" SelectionChanged="CV_SelectionChanged"
                             VerticalScrollBarVisibility="Never" Grid.Row="4">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Margin="0,15">
-                            <Grid Margin="20,0,0,0">
+                            <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />

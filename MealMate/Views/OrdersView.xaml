@@ -5,13 +5,9 @@
              xmlns:helpers="clr-namespace:MealMate.Helpers"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
-             xmlns:vm="clr-namespace:MealMate.ViewModels"
-             x:Class="MealMate.Views.LogoutView"
+             x:Class="MealMate.Views.OrdersView"
              BackgroundColor="DarkRed"
              Visual="Material">
-    <ContentPage.BindingContext>
-        <vm:LogoutViewModal />
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -21,32 +17,28 @@
 
             <ImageButton Grid.Row="0" Source="{FontImage FontFamily=FontAwesome,
                     Glyph={x:Static helpers:IconFont.ArrowLeft}, Size=30,Color=White}" BackgroundColor="Transparent"
-                    Margin="10,30" HorizontalOptions="Start" Clicked="ImageButton_Clicked" VerticalOptions="Start" Aspect="AspectFill"/>
+                    Margin="10,30" HorizontalOptions="Start" Clicked="ImageButton_Clicked"  VerticalOptions="Start" Aspect="AspectFill"/>
 
             <Label Text="Meal Mate" FontSize="40" TextColor="White" FontFamily="CabinSketch"
                    HorizontalOptions="Center" VerticalOptions="Center" />
             <Label x:Name="LabelName" FontSize="Subtitle" TextColor="WhiteSmoke"
                    HorizontalOptions="Center" VerticalOptions="End" />
 
-
-
             <pancake:PancakeView CornerRadius="60,60,0,0" Grid.Row="1" BackgroundColor="WhiteSmoke">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                    <StackLayout IsVisible="{Binding IsCartExists}">
-                        <Label Text="Cart is not empty!" />
-                        <Label Text="{Binding UserCartItemsCount, StringFormat='Your Cart Contains {0} items!'}" />
-                    </StackLayout>
-                    <StackLayout>
-                        <Label Text="Are you sure you want to Logout?" />
-                        <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Button Text="Yes, Logout" HorizontalOptions="Center" BackgroundColor="DarkRed"
-                                    CornerRadius="20" Command="{Binding LogoutCommand}"/>
-                            <Button Text="No, go to Cart" HorizontalOptions="Center" BackgroundColor="LightGreen"
-                                    CornerRadius="20" Command="{Binding GoToCartCommand}"/>
-                        </StackLayout>
-                    </StackLayout>
+                    <Label Text="Thanks for placing an order with us." />
+                    <Label Text="Please note down your Order ID for further Tracking" />
+                    <Label x:Name="LabelOrderID" TextColor="Purple"
+                           FontSize="Subtitle" />
+
+                    <Button Text="View All Products"
+                            WidthRequest="200"
+                            BackgroundColor="Purple"
+                            HorizontalOptions="Center"
+                            CornerRadius="20" Clicked="Button_Clicked" />
                 </StackLayout>
             </pancake:PancakeView>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

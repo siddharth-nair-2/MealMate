@@ -17,7 +17,7 @@ namespace MealMate.Helpers
         public AddFoodItemData()
         {
 
-            client = new FirebaseClient("https://mealmate-61db7-default-rtdb.firebaseio.com/");
+            client = new FirebaseClient(Constants.URL);
             FoodItems = new List<FoodItem>()
             {
                 new FoodItem()

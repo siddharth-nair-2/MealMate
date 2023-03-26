@@ -56,13 +56,13 @@ namespace MealMate.ViewModels
 		public ProductDetailsViewModel(FoodItem foodItem)
 		{
 			SelectedFoodItem = foodItem;
-			TotalQuantity = 0;
+			TotalQuantity = 1;
 
 			IncrementOrderCommand = new Command(() => IncrementOrder());
 			DecrementOrderCommand = new Command(() => DecrementOrder());
 			AddToCartCommand = new Command(() => AddToCart());
-			ViewCartCommand = new Command(async () => ViewCartAsync());
-            HomeCommand = new Command(async () => GoToHomeAsync());
+			ViewCartCommand = new Command( () => ViewCartAsync());
+            HomeCommand = new Command( () => GoToHomeAsync());
 		}
 
         private async void GoToHomeAsync()
@@ -77,7 +77,14 @@ namespace MealMate.ViewModels
 
         private void AddToCart()
         {
-			var cn = DependencyService.Get<ISQLite>().GetConnection();
+
+            if (TotalQuantity < 1)
+            {
+                Application.Current.MainPage.DisplayAlert("Nothing to add!", "Please increase the quantity and try again!", "OK");
+                return;
+            }
+
+            var cn = DependencyService.Get<ISQLite>().GetConnection();
 			try
 			{
 				CartItem ci = new CartItem()

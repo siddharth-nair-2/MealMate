@@ -1,4 +1,5 @@
 ﻿using Firebase.Database;
+using MealMate.Helpers;
 using MealMate.Model;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace MealMate.Services
         FirebaseClient client;
         public FoodItemService()
         {
-            client = new FirebaseClient("https://mealmate-61db7-default-rtdb.firebaseio.com/");
+            client = new FirebaseClient(Constants.URL);
         }
 
         public async Task<List<FoodItem>> GetFoodItemsAsync()
@@ -50,6 +51,19 @@ namespace MealMate.Services
             return foodItemsSpecific;
         }
 
+        public async Task<ObservableCollection<FoodItem>> GetFoodItemsByQueryAsync(string query)
+        {
+            var foodItemsByQuery = new ObservableCollection<FoodItem>();
+
+            var items = (await GetFoodItemsAsync()).Where(p => p.Name.Contains(query)).ToList();
+
+            foreach (var item in items)
+            {
+                foodItemsByQuery.Add(item);
+            }
+
+            return foodItemsByQuery;
+        }
         public async Task<ObservableCollection<FoodItem>> GetLatestFoodItemsAsync()
         {
             var latestFoodItems = new ObservableCollection<FoodItem>();

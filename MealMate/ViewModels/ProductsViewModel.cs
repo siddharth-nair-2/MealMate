@@ -42,12 +42,27 @@ namespace MealMate.ViewModels
 			}
 		}
 
+		private string _SearchText;
+
+		public string SearchText
+		{
+			get { return _SearchText; }
+			set 
+			{ 
+				_SearchText = value;
+				OnPropertyChanged();
+			}
+		}
+
+
 		public ObservableCollection<Category> Categories { get; set; }
 		public ObservableCollection<FoodItem> LatestItems { get; set; }
 
 		public Command ViewCartCommand { get; set; }
-		public Command LogoutCommand { get; set; }
-		public ProductsViewModel()
+        public Command OrdersHistoryCommand { get; set; }
+        public Command LogoutCommand { get; set; }
+        public Command SearchViewCommand { get; set; }
+        public ProductsViewModel()
 		{
 			var username = Preferences.Get("Username", String.Empty);
 			if (String.IsNullOrEmpty(username))
@@ -66,19 +81,35 @@ namespace MealMate.ViewModels
 
 			ViewCartCommand = new Command(async () => await ViewCartAsync());
             LogoutCommand = new Command(async () => await LogoutAsync());
+			OrdersHistoryCommand = new Command(async () => await OrdersHistoyAsync());
+			SearchViewCommand = new Command(async () => await SearchViewAsync());
 
             GetCategories();
 			GetLatestItems();
 		}
 
+        private async Task SearchViewAsync()
+        {
+            UserCartItemsCount = new CartItemService().GetUserCartCount();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new SearchResultsView(SearchText));
+        }
+
+        private async Task OrdersHistoyAsync()
+        {
+            UserCartItemsCount = new CartItemService().GetUserCartCount();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new OrdersHistoryView());
+        }
+
         private async Task LogoutAsync()
         {
+            UserCartItemsCount = new CartItemService().GetUserCartCount();
             await Application.Current.MainPage.Navigation.PushModalAsync(new LogoutView());
         }
 
         private async Task ViewCartAsync()
         {
-			await Application.Current.MainPage.Navigation.PushModalAsync(new CartView());
+            UserCartItemsCount = new CartItemService().GetUserCartCount();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new CartView());
         }
 
         private async void GetCategories()

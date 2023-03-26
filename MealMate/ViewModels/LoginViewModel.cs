@@ -66,11 +66,25 @@ namespace MealMate.ViewModels
                 return this._Result;
             }
         }
+        private bool _Disable;
+        public bool Disable
+        {
+            set
+            {
+                this._Disable = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return this._Disable;
+            }
+        }
 
         public Command LoginCommand { get; set; }
         public Command RegisterCommand { get; set; }
         public LoginViewModel() 
         {
+            Disable = false;
             LoginCommand = new Command(async () => await LoginCommandAsync());
             RegisterCommand = new Command(async () => await RegisterCommandAsync());
         }

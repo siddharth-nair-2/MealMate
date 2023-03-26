@@ -2,12 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:helpers="clr-namespace:MealMate.Helpers"
+             xmlns:behaviours="clr-namespace:MealMate.Behaviours"
              xmlns:vm="clr-namespace:MealMate.ViewModels"
              x:Class="MealMate.Views.LoginView"
              Visual="Material">
     <ContentPage.BindingContext>
         <vm:LoginViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:TextToBoolConverter x:Key="textToBoolConverter"/>
+            <helpers:PasswordToBoolConverter x:Key="passwordConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid Padding="20" VerticalOptions="Center">
             <Grid.RowDefinitions>
@@ -21,14 +28,71 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Spacing="10">
-                <Entry Placeholder="Enter Username" Text="{Binding Username}" />
-                <Entry Placeholder="Enter Password" Text="{Binding Password}" IsPassword="true" />
+                <Frame CornerRadius="20">
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static helpers:IconFont.AccountCircle}, Size=30,Color=Black}" 
+                            BackgroundColor="Transparent" HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Center"/>
+                        <Entry Placeholder="Enter Username" Text="{Binding Username}" BackgroundColor="Transparent" 
+                               HorizontalOptions="FillAndExpand" x:Name="EntryUsername">
+                            <Entry.Behaviors>
+                                <behaviours:NotNullBehaviour x:Name="UserNN" />
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="20">
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static helpers:IconFont.Lock}, Size=30,Color=Black}" 
+                            BackgroundColor="Transparent" HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Center"/>
+                        <Entry Placeholder="Enter Password (Min. 6)" Text="{Binding Password}" IsPassword="true" BackgroundColor="Transparent" 
+                               HorizontalOptions="FillAndExpand" x:Name="EntryPassword">
+                            <Entry.Behaviors>
+                                <behaviours:PasswordLengthBehaviour x:Name="PasswordValid" />
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                </Frame>
 
-                <Button Text="Login" HorizontalOptions="Center" BackgroundColor="DarkRed" 
-                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20" Command="{Binding LoginCommand}"/>
-                <Label Text="New Users : " />
+                <Button Text="Login" HorizontalOptions="Center" BackgroundColor="DarkRed"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                        Command="{Binding LoginCommand}" IsEnabled="{Binding Disable}">
+                    <Button.Triggers>
+                        <MultiTrigger TargetType="Button">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding Source={x:Reference EntryUsername},
+                                Path=Text,
+                                Converter={StaticResource textToBoolConverter}}" Value="True" />
+
+                                <BindingCondition Binding="{Binding Source={x:Reference EntryPassword},
+                                Path=Text,
+                                Converter={StaticResource passwordConverter}}" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True" />
+                        </MultiTrigger>
+                    </Button.Triggers>
+                </Button>
+                <Label Text="New Users : " TextColor="Black" FontAttributes="Bold"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="CheckBoxAgree" VerticalOptions="Center" Color="Black" IsChecked="False" />
+                    <Label Text="I Agree" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                </StackLayout>
+
                 <Button Text="Register" HorizontalOptions="Center" BackgroundColor="DarkOrange" 
-                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20" Command="{Binding RegisterCommand}"/>
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20" Command="{Binding RegisterCommand}" IsEnabled="{Binding Disable}" >
+                    <Button.Triggers>
+                        <MultiTrigger TargetType="Button">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding Source={x:Reference EntryUsername}, Path=Text,
+                                Converter={StaticResource textToBoolConverter}}" Value="True" />
+                                <BindingCondition Binding="{Binding Source={x:Reference EntryPassword}, Path=Text,
+                                Converter={StaticResource passwordConverter}}" Value="True" />
+                                <BindingCondition Binding="{Binding Source={x:Reference CheckBoxAgree}, Path=IsChecked}" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True" />
+                        </MultiTrigger>
+                    </Button.Triggers>
+                </Button>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

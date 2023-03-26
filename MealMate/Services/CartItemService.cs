@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MealMate.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MealMate.Services
 {
@@ -8,12 +10,18 @@ namespace MealMate.Services
     {
         public int GetUserCartCount()
         {
-            return 0;
+            var cn = DependencyService.Get<ISQLite>().GetConnection();
+            var count = cn.Table<CartItem>().Count();
+            cn.Close();
+            return count;
         }
 
         public void RemoveCartItems()
         {
-
+            var cn = DependencyService.Get<ISQLite>().GetConnection();
+            cn.DeleteAll<CartItem>();
+            cn.Commit();
+            cn.Close();
         }
     }
 }

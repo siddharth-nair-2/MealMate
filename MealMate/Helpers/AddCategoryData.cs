@@ -16,7 +16,7 @@ namespace MealMate.Helpers
         FirebaseClient client;
         public AddCategoryData()
         {
-            client = new FirebaseClient("https://mealmate-61db7-default-rtdb.firebaseio.com/");
+            client = new FirebaseClient(Constants.URL);
             Categories = new List<Category>()
             {
                 new Category()

@@ -40,5 +40,13 @@ namespace MealMate.Views
 
             lastElementSelected = (StackLayout)sender;
         }
+
+        private async void CV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedProduct = e.CurrentSelection.FirstOrDefault() as FoodItem;
+            if(selectedProduct == null) return;
+            await Navigation.PushModalAsync(new ProductDetailsView(selectedProduct));
+            ((CollectionView)sender).SelectedItem = null;
+        }
     }
 }

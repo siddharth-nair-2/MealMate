@@ -16,5 +16,10 @@ namespace MealMate.Views
         {
             InitializeComponent();
         }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

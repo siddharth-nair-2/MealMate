@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:helpers="clr-namespace:MealMate.Helpers"
+             xmlns:vm="clr-namespace:MealMate.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             x:Class="MealMate.Views.SearchResultsView"
+             Visual="Material"
+             BackgroundColor="DarkRed">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <ImageButton Grid.Row="0" Source="{FontImage FontFamily=FontAwesome,
+                    Glyph={x:Static helpers:IconFont.ArrowLeft}, Size=30,Color=White}" BackgroundColor="Transparent"
+                    Margin="10,30" HorizontalOptions="Start" Clicked="ImageButton_Clicked" VerticalOptions="Start" Aspect="AspectFill"/>
+
+            <Label Text="Meal Mate" FontSize="40" TextColor="White" FontFamily="CabinSketch"
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="LabelName" FontSize="Subtitle" TextColor="WhiteSmoke"
+                   HorizontalOptions="Center" VerticalOptions="End" />
+
+            <pancake:PancakeView CornerRadius="40,40,0,0" Grid.Row="1" BackgroundColor="White">
+                <Grid Padding="25,30" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding TotalFoodItems, StringFormat='{0} Total Items'}" 
+                           FontAttributes="Bold" FontSize="18"/>
+                    <Image Grid.Row="0" Grid.Column="1" Source="More" />
+
+                    <CollectionView ItemsSource="{Binding FoodItemsByQuery}" VerticalOptions="Start" VerticalScrollBarVisibility="Never" Grid.ColumnSpan="2"
+                                    Grid.Row="1" Grid.Column="0" SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame HasShadow="False" BackgroundColor="#fef6f2" HeightRequest="90" CornerRadius="20" Margin="0,10">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <pancake:PancakeView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" CornerRadius="12" Margin="0,0,10,0">
+                                                <Image Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="95" Aspect="AspectFill" />
+                                            </pancake:PancakeView>
+
+                                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Name}"
+                                                   FontSize="15" FontAttributes="Bold" />
+                                            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Description}"
+                                                   FontSize="15" TextColor="#a4a7b6" />
+                                            <Image Grid.Row="2" Grid.Column="1" Source="Star" HorizontalOptions="Start" WidthRequest="20" />
+                                            <Label Grid.Row="2" Grid.Column="1" Margin="30,0,0,0" FontSize="15" VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding Rating}" FontAttributes="Bold" />
+                                                        <Span Text="{Binding RatingDetail}" TextColor="#a4a7b6" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Image Grid.Row="0" Grid.Column="2" Source="{Binding HomeSelected}" HeightRequest="15" />
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </pancake:PancakeView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

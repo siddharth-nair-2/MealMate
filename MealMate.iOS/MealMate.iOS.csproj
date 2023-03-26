@@ -215,4 +215,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\loginLogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\loadingLogo.gif" />
+  </ItemGroup>
 </Project>
