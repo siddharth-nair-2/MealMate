@@ -22,44 +22,58 @@ namespace MealMate.Helpers
                 new Category()
                 {
                     CategoryId= 1,
-                    CategoryName = "Burger",
-                    CategoryPoster = "MainBurger.png",
-                    ImageUrl = "Burger.png"
+                    CategoryName = "Canadian",
+                    CategoryPoster = "CanadianPoster.jpg",
+                    ImageUrl = "CanadianCat.png"
                 },
                 new Category()
                 {
                     CategoryId= 2,
-                    CategoryName = "Pizza",
-                    CategoryPoster = "MainPizza.jpg",
-                    ImageUrl = "Pizza.png"
+                    CategoryName = "American",
+                    CategoryPoster = "AmericanPoster.jpg",
+                    ImageUrl = "AmericanCat.png"
                 },
                 new Category()
                 {
                     CategoryId= 3,
-                    CategoryName = "Desserts",
-                    CategoryPoster = "MainDessert.jpeg",
-                    ImageUrl = "Dessert.png"
+                    CategoryName = "Indian",
+                    CategoryPoster = "IndianPoster.jpg",
+                    ImageUrl = "IndianCat.png"
                 },
                 new Category()
                 {
                     CategoryId= 4,
-                    CategoryName = "Vegan Burger",
-                    CategoryPoster = "MainBurger.jpg",
-                    ImageUrl = "Burger.png"
+                    CategoryName = "Arab",
+                    CategoryPoster = "ArabPoster.jpeg",
+                    ImageUrl = "ArabCat.png"
                 },
                 new Category()
                 {
                     CategoryId= 5,
-                    CategoryName = "Vegan Pizza",
-                    CategoryPoster = "MainPizza.jpg",
-                    ImageUrl = "Pizza.png"
+                    CategoryName = "Chinese",
+                    CategoryPoster = "ChinesePoster.jpg",
+                    ImageUrl = "ChineseCat.png"
                 },
                 new Category()
                 {
                     CategoryId= 6,
-                    CategoryName = "Cakes",
-                    CategoryPoster = "MainDessert.jpeg",
-                    ImageUrl = "Dessert.png"
+                    CategoryName = "Italian",
+                    CategoryPoster = "ItalianPoster.jpeg",
+                    ImageUrl = "ItalianCat.png"
+                },
+                new Category()
+                {
+                    CategoryId= 7,
+                    CategoryName = "Mexican",
+                    CategoryPoster = "MexicanPoster.jpg",
+                    ImageUrl = "MexicanCat.png"
+                },
+                new Category()
+                {
+                    CategoryId= 8,
+                    CategoryName = "French",
+                    CategoryPoster = "FrenchPoster.jpg",
+                    ImageUrl = "FrenchCat.png"
                 },
             };
         }

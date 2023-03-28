@@ -13,11 +13,15 @@
   <ItemGroup>
     <None Remove="Fonts\CabinSketch-Bold.ttf" />
     <None Remove="Fonts\materialdesignicons-webfont.ttf" />
+    <None Remove="Fonts\Poppins-Bold.ttf" />
+    <None Remove="Fonts\Poppins-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Fonts\CabinSketch-Bold.ttf" />
     <EmbeddedResource Include="Fonts\materialdesignicons-webfont.ttf" />
+    <EmbeddedResource Include="Fonts\Poppins-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\Poppins-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>

@@ -218,4 +218,241 @@
   <ItemGroup>
     <BundleResource Include="Resources\loadingLogo.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IndianCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AmericanCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AmericanPoster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ArabCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ArabPoster.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CanadianCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CanadianPoster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChineseCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChinesePoster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FrenchCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FrenchPoster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IndianPoster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ItalianCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ItalianPoster.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MexicanCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MexicanPoster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bacon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bagels.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bannock.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButterTart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Lobster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Poutine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SmokedMeat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ApplePie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cheese.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Chicken.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Chip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Donut.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HotDog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IceCream.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Biryani.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButterChicken.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Chaat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dosa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GulabJamun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Korma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Naan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Samosa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Falafel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GrilledHaloumi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Hummus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Kofta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Manakeesh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Medames.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Shawarma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Tabouleh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CharSiu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChowMein.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DimSum.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Duck.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dumpling.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\KungPao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SSPork.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Tofu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Baguette.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Boeuf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cassoulet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Crepes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Croissant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Eclair.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FoieGras.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Macarons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Focaccia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Gelato.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Gnocchi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Lasagne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pasta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pizza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Polenta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Ravioli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Chilaquiles.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Elote.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Enchiladas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Guacamole.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pozole.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Tacos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Tamales.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Tostadas.jpg" />
+  </ItemGroup>
 </Project>

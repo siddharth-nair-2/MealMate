@@ -55,11 +55,11 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" FontSize="16" >
+                <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" FontSize="16" FontFamily="Poppins">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Welcome, " />
-                            <Span Text="{Binding UserName, Converter={StaticResource unameConverter}}" FontAttributes="Bold" FontSize="18"/>
+                            <Span Text="{Binding UserName, Converter={StaticResource unameConverter}}" FontAttributes="Bold" FontSize="18" FontFamily="PBold"/>
                             <Span Text="!"  FontSize="18"/>
                         </FormattedString>
                     </Label.FormattedText>
@@ -69,7 +69,7 @@
                              Margin="0,0,10,0" HorizontalOptions="Center" Command="{Binding OrdersHistoryCommand}"/>
 
                 <Label Text="{Binding UserCartItemsCount}" FontSize="Subtitle" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HorizontalTextAlignment="End"
-                       VerticalTextAlignment="Start" />
+                       VerticalTextAlignment="Start" FontFamily="Poppins" />
                 <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Source="{FontImage FontFamily=FontAwesome,
                     Glyph={x:Static helpers:IconFont.Cart}, Size=40,Color=Green}" BackgroundColor="Transparent"
                     Margin="0,0,10,0" HorizontalOptions="Center" Command="{Binding ViewCartCommand}"/>
@@ -84,7 +84,7 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <SearchBar Grid.Column="0" Placeholder="Search Food" BackgroundColor="Transparent" HorizontalOptions="Fill" 
-                           Text="{Binding SearchText}"/>
+                           Text="{Binding SearchText}" FontFamily="Poppins"/>
                 <ImageButton Grid.Column="1" Source="{FontImage FontFamily=FontAwesome,
                     Glyph={x:Static helpers:IconFont.SearchWeb}, Size=40,Color=Black}" BackgroundColor="Transparent"
                     Margin="0,0,10,0" HorizontalOptions="End"  Command="{Binding SearchViewCommand}"/>
@@ -104,13 +104,13 @@
                             <Frame HeightRequest="50" HasShadow="False" BackgroundColor="#feeee8" CornerRadius="10">
                                 <Image Source="{Binding ImageUrl}" />
                             </Frame>
-                            <Label Text="{Binding CategoryName}" HorizontalTextAlignment="Center" />
+                            <Label Text="{Binding CategoryName}" HorizontalTextAlignment="Center" FontFamily="Poppins"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <Label Grid.Row="3" Text="Latest Items" FontSize="25" FontAttributes="Bold" />
+            <Label Grid.Row="3" Text="Latest Items" FontSize="25" FontAttributes="Bold" FontFamily="PBold"/>
             <CollectionView ItemsSource="{Binding LatestItems}" Margin="0,20,10,0" VerticalOptions="Start"
                             SelectionMode="Single" SelectionChanged="CV_SelectionChanged"
                             VerticalScrollBarVisibility="Never" Grid.Row="4">
@@ -130,12 +130,12 @@
                                 <Frame Grid.Row="1" Margin="20,-80,20,70" BackgroundColor="White" 
                                        CornerRadius="12" HorizontalOptions="End" Padding="10,10,10,10" HasShadow="True">
                                     <Label Text="{Binding Price, StringFormat='{0:c}'}" FontSize="Small" 
-                                           FontAttributes="Bold" TextColor="Black" HeightRequest="10" />
+                                           FontAttributes="Bold" TextColor="Black" HeightRequest="10"/>
                                 </Frame>
                                 <Label Text="{Binding Name}" FontSize="22" FontAttributes="Bold" 
-                                       VerticalTextAlignment="Center" Grid.Row="1"/>
+                                       VerticalTextAlignment="Center" Grid.Row="1" FontFamily="Poppins"/>
                                 <Image Grid.Row="2" Source="Star" HorizontalOptions="Start" WidthRequest="20" />
-                                <Label Grid.Row="2" Margin="30,0,0,0" FontSize="15" VerticalOptions="Center">
+                                <Label Grid.Row="2" Margin="30,0,0,0" FontSize="15" VerticalOptions="Center" FontFamily="Poppins">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="{Binding Rating} " FontAttributes="Bold" />

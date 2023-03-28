@@ -1,4 +1,5 @@
-﻿using MealMate.Views;
+﻿using MealMate.Model;
+using MealMate.Views;
 using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -8,6 +9,7 @@ namespace MealMate
 {
     public partial class App : Application
     {
+        public static bool isCartTableCreated = Preferences.Get("isCartItemTableCreated", false);
         public App()
         {
             InitializeComponent();
@@ -29,6 +31,13 @@ namespace MealMate
 
         protected override void OnStart()
         {
+            if(isCartTableCreated == false) 
+            {
+                var cn = DependencyService.Get<ISQLite>().GetConnection();
+                cn.CreateTable<CartItem>();
+                cn.Close();
+                Preferences.Set("isCartItemTableCreated", true);
+            }
         }
 
         protected override void OnSleep()
