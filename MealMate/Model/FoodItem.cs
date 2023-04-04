@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Database;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,5 +16,10 @@ namespace MealMate.Model
         public string HomeSelected { get; set; }
         public decimal Price { get; set; }
         public int CategoryID { get; set; }
+
+        public static implicit operator FirebaseObject<object>(FoodItem v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

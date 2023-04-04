@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MealMate.Views.AddCategoryView">
+    <Position X="15.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAABAAAAAAAAAAAAIAAAACAAAAAARAAAAAAAAA=</HashCode>
+      <FileName>Views\AdminViews\AddCategoryView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.AddItemsView">
+    <Position X="19.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAACAAAAAAAAAAAAAAAIAAAACAEAAAABAAAEAACAA=</HashCode>
+      <FileName>Views\AdminViews\AddItemsView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.SettingsPage">
+    <Position X="22.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AdminViews\SettingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.ViewAllOrdersView">
+    <Position X="26.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AdminViews\ViewAllOrdersView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.CartView">
+    <Position X="24.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\CartView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.CategoryView">
+    <Position X="28" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Views\CategoryView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.LoginView">
+    <Position X="26.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\LoginView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.LogoutView">
+    <Position X="26.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\LogoutView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.OrdersHistoryView">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\OrdersHistoryView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.OrdersView">
+    <Position X="21" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\OrdersView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.ProductDetailsView">
+    <Position X="28" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Views\ProductDetailsView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.ProductsView">
+    <Position X="24.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAABAAAAAAAAEAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Views\ProductsView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.SearchResultsView">
+    <Position X="21" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAEAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Views\SearchResultsView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.AdminViews.DeleteCategoryView">
+    <Position X="17.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAACAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Views\AdminViews\DeleteCategoryView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMate.Views.AdminViews.DeleteItemView">
+    <Position X="22.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAAACAAAAAAAAAAAAAAAAAAAACAEQAAAABAAEAAAAA=</HashCode>
+      <FileName>Views\AdminViews\DeleteItemView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xamarin.Forms.ContentPage" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

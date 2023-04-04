@@ -26,29 +26,41 @@ namespace MealMate.Services
             return (user != null);
         }
 
-        public async Task<bool> RegisterUser(string username, string password)
+        public async Task<string> RegisterUser(string username, string password)
         {
             if (await DoesUserExist(username) == false)
             {
                 await client.Child("Users").PostAsync(new User()
                 {
                     Username = username,
-                    Password = password
+                    Password = password,
+                    IsAdmin= false
                 });
-                return true;
+                return "true";
             }
 
-            return false;
+            return "false";
         }
 
-        public async Task<bool> LoginUser(string username, string password)
+        public async Task<string> LoginUser(string username, string password)
         {
+            var userAdmin = (await client.Child("Users")
+                .OnceAsync<User>()).Where(u => u.Object.Username == username)
+                .Where(u => u.Object.Password == password)
+                .Where(u => u.Object.IsAdmin == true)
+                .FirstOrDefault();
+
+            if(userAdmin != null)
+            {
+                return "admin";
+            }
+
             var user = (await client.Child("Users")
                 .OnceAsync<User>()).Where(u => u.Object.Username == username)
                 .Where(u => u.Object.Password == password)
                 .FirstOrDefault();
 
-            return (user != null);
+            return user != null ? "user" : "none";
         }
     }
 }

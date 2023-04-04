@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:helpers="clr-namespace:MealMate.Helpers"
+             xmlns:vm="clr-namespace:MealMate.ViewModels"
+             x:Class="MealMate.Views.SettingsPage"
+             Visual="Material">
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" FontSize="16" FontFamily="Poppins" Margin="20,0,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Welcome, " />
+                            <Span Text="Admin" FontAttributes="Bold" FontSize="18" FontFamily="PBold"/>
+                            <Span Text="!"  FontSize="18"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Source="{FontImage FontFamily=FontAwesome,
+                            Glyph={x:Static helpers:IconFont.LogoutVariant}, Size=40,Color=Red}" BackgroundColor="Transparent"
+                            Margin="0,0,10,0" HorizontalOptions="Center" Command="{Binding LogoutCommand}"/>
+            </Grid>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Spacing="50">
+                <Button Text="Add Categories" x:Name="ButtonCategories" Command="{Binding AddCategories}" Padding="10"/>
+                <Button Text="Delete Categories" x:Name="ButtonDeleteCategories" Command="{Binding DeleteCategories}" Padding="10"/>
+                <Button Text="Add Food Items" x:Name="ButtonFoodItem" Command="{Binding AddItems}" Padding="10"/>
+                <Button Text="Delete Food Items" x:Name="ButtonDeleteFoodItem" Command="{Binding DeleteItems}" Padding="10"/>
+                <Button Text="View All Orders" x:Name="ButtonCart" Command="{Binding ViewAllOrders}" Padding="10"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

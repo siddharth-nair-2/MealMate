@@ -1,4 +1,5 @@
 ﻿using Firebase.Database;
+using Firebase.Database.Query;
 using MealMate.Helpers;
 using MealMate.Model;
 using System;
@@ -7,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace MealMate.Services
 {
@@ -36,6 +38,60 @@ namespace MealMate.Services
                 }).ToList();
 
             return products;
+        }
+
+        public async Task<bool> DeleteFoodFromCategory(int id)
+        {
+            var node = client.Child("FoodItems");
+
+            var snapshot = await node.OnceAsync<FoodItem>();
+
+            foreach (var itemSnapshot in snapshot)
+            {
+                var item = itemSnapshot.Object;
+
+                if (item.CategoryID == id)
+                {
+                    var itemKey = itemSnapshot.Key;
+                    await node.Child(itemKey).DeleteAsync();
+                }
+            }
+            return true;
+        }
+
+        public async Task<bool> DeleteFoodItem(int id)
+        {
+            var node = client.Child("FoodItems");
+
+            var snapshot = await node.OnceAsync<FoodItem>();
+
+            foreach (var itemSnapshot in snapshot)
+            {
+                var item = itemSnapshot.Object;
+
+                if (item.ProductID == id)
+                {
+                    var itemKey = itemSnapshot.Key;
+                    await node.Child(itemKey).DeleteAsync();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public async Task<int> FoodItemMaxID()
+        {
+            var allItems = await GetFoodItemsAsync();
+            int max = 0;
+            foreach (var item in allItems)
+            {
+                if(item.ProductID > max)
+                {
+                    max = item.ProductID;
+                }
+            }
+
+            return max;
         }
 
         public async Task<ObservableCollection<FoodItem>> GetFoodItemsByCategoryAsync(int categoryID)

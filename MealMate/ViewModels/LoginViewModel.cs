@@ -53,8 +53,8 @@ namespace MealMate.ViewModels
             }
         }
 
-        private bool _Result;
-        public bool Result
+        private string _Result;
+        public string Result
         {
             set
             {
@@ -97,7 +97,7 @@ namespace MealMate.ViewModels
                 IsBusy= true;
                 var userService = new UserService();
                 Result = await userService.RegisterUser(Username, Password);
-                if(Result)
+                if(Result == "true")
                 {
                     await Application.Current.MainPage.DisplayAlert("Success", "User Registered!", "OK");
                 } else
@@ -124,11 +124,12 @@ namespace MealMate.ViewModels
                 IsBusy = true;
                 var userService = new UserService();
                 Result = await userService.LoginUser(Username, Password);
-                if(Result) {
+                if(Result == "admin") {
+                    await Application.Current.MainPage.Navigation.PushModalAsync(new SettingsPage());
+                } else if(Result == "user") {
                     Preferences.Set("Username", Username);
                     await Application.Current.MainPage.Navigation.PushModalAsync(new ProductsView());
-                } else
-                {
+                } else {
                     await Application.Current.MainPage.DisplayAlert("Error", "Invalid Username or Password", "OK");
                 }
             }

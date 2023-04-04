@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:helpers="clr-namespace:MealMate.Helpers"
+             xmlns:vm="clr-namespace:MealMate.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             x:Class="MealMate.Views.AddCategoryView"
+             Visual="Material"
+             BackgroundColor="DarkRed">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <BoxView Grid.Row="0" />
+            <Label Text="Meal Mate" FontSize="40" TextColor="White" FontFamily="CabinSketch"
+                HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="LabelName" FontSize="Subtitle" TextColor="WhiteSmoke"
+                HorizontalOptions="Center" VerticalOptions="End" Text="Create Category!"/>
+            <ImageButton Grid.Row="0" Source="{FontImage FontFamily=FontAwesome,
+                Glyph={x:Static helpers:IconFont.ArrowLeft}, Size=30,Color=White}" BackgroundColor="Transparent"
+                Margin="10,30" HorizontalOptions="Start" Clicked="ImageButton_Clicked" VerticalOptions="Start"/>
+
+            <pancake:PancakeView Grid.Row="1" BackgroundColor="WhiteSmoke" CornerRadius="60,60,0,0" >
+                <ScrollView>
+                    <StackLayout VerticalOptions="Center" Margin="20" HorizontalOptions="Center" Spacing="30" >
+                        <Entry Placeholder="Enter Category Name (Max. 15)" BackgroundColor="Transparent" 
+                                HorizontalOptions="FillAndExpand" x:Name="EntryCatName" TextChanged="EntryCatName_TextChanged"/>
+                        <Image x:Name="iconImage" WidthRequest="200"/>
+                        <Button Text="Upload Category Icon" Clicked="IconButton_Clicked" />
+                        <Image x:Name="posterImage" WidthRequest="200"/>
+                        <Button Text="Upload Category Poster" Clicked="PosterButton_Clicked" />
+                        <Button Text="Create Category" HorizontalOptions="Center" BackgroundColor="DarkRed"
+                                TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                                Clicked="Button_Clicked"/>
+                        <Label Text="" x:Name="totalCatCount"/>
+                    </StackLayout>
+                </ScrollView>
+            </pancake:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
